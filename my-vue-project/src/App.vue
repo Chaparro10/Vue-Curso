@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import { animals } from "./data/animals";
+import ChildComponent from "./components/ChildComponent.vue";
 let number = ref(0);
 
 //setInterval(()=>{number.value++},100);
@@ -24,6 +25,12 @@ const count = ref(5);
 
 const addCount=()=>{
   count.value++;
+}
+
+const displayName=ref('');
+
+const setName=(event)=>{
+  displayName.value=event;
 }
 </script>
 
@@ -64,6 +71,9 @@ const addCount=()=>{
   </div>
 
 
+  <!-- Comunicacion hijo- padre -->
+<h1>Hola {{ displayName }}</h1>
+  <ChildComponent @login="setName"/>
   
 </template>
 
