@@ -20,10 +20,18 @@ let myCondition = true;
 
 const condition = false;
 const movies = ["1", "2", "3", "4", 6];
+const count = ref(5);
+
+const addCount=()=>{
+  count.value++;
+}
 </script>
 
 <template>
-  <HeaderComponent />
+  <button @click="addCount">
+      sumar 1
+  </button>
+  <HeaderComponent  message="Hola desde el padre" v-bind:count="count" />
   <h1 v-bind:id="myId" class="title">Hola Mundo!</h1>
 
   <h2 @click="addOne">{{ number }}</h2>
@@ -54,6 +62,9 @@ const movies = ["1", "2", "3", "4", 6];
       {{ index + 1 }}-{{ value.name }}
     </p>
   </div>
+
+
+  
 </template>
 
 <style scoped>
