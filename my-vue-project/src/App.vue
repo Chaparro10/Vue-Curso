@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import { animals } from "./data/animals";
 import ChildComponent from "./components/ChildComponent.vue";
@@ -32,6 +32,15 @@ const displayName=ref('');
 const setName=(event)=>{
   displayName.value=event;
 }
+
+
+const namePerson1=ref("JoseJuan");
+
+const namePerson1Length= computed(()=>{
+  return namePerson1.value.length;
+});
+
+
 </script>
 
 <template>
@@ -51,6 +60,9 @@ const setName=(event)=>{
   <h3>{{ myValueModel }}</h3>
 
   <input type="text" v-model="myValueModel" />
+
+  <h1>longitud texto:{{namePerson1Length}}</h1>
+  <input type="text" v-model="namePerson1">
 
   <!-- clases css dinamicas -->
   <h1 :class="{ highlight: myCondition, red: true }">Texto condicional</h1>
