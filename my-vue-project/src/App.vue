@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import { animals } from "./data/animals";
 import ChildComponent from "./components/ChildComponent.vue";
@@ -39,6 +39,20 @@ const namePerson1=ref("JoseJuan");
 const namePerson1Length= computed(()=>{
   return namePerson1.value.length;
 });
+
+const userName=ref({name:"Adrian"});
+const setName1=()=>{
+  userName.value.name="Maria";
+}
+
+watch(userName,(newValue,oldValue)=>{
+  console.log('newValue', newValue)
+  console.log('oldValue', oldValue)
+  console.log('Username modified')
+}, {
+ immediate: true,//para que se ejecute en cuanto inicia
+ deep:true // para objetos
+})
 
 
 </script>
@@ -106,6 +120,19 @@ const namePerson1Length= computed(()=>{
           <h1>BOTTOM</h1>
       </template>
   </ChildComponent>
+
+  <!-- WATCH  | VIGILANCIA DE CAMBIOS -->
+    <h1>
+      Watch | Vigilancia de cambios
+    </h1>
+    <h2>Hola, {{userName.name}}</h2>
+
+    <button @click="setName1">
+      Cambiar de usuario
+    </button>
+ 
+
+
   
 </template>
 
