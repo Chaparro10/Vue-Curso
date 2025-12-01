@@ -5,7 +5,9 @@ let number=ref(0);
 
 //setInterval(()=>{number.value++},100);
 
+const myId="1";
 
+const myValue=ref("some value");
 
 const addOne=()=>{
   number.value++;
@@ -15,9 +17,11 @@ const addOne=()=>{
 
 <template>
   <HeaderComponent/>
-      <h1 class="title">Hola Mundo!</h1>
+      <h1 v-bind:id="myId" class="title">Hola Mundo!</h1>
 
       <h2 @click="addOne">{{ number }}</h2>
+
+      <input type="text" :value="myValue">
 
 </template> 
 
