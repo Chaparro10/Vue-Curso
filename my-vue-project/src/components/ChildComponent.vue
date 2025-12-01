@@ -18,13 +18,20 @@ const login=()=>{
 <template>
 
     <div class="child">
+        <slot name="top"></slot>
         <h2>
             Este es un componente hijo
         </h2>
+      
+
+        <slot>
+            contenido por defecto
+        </slot>
         <p>
         Nombre de usuario::{{ username }}
         </p>
         <button @click="login">Login</button>
+        <slot name="bottom"></slot>
     </div>
 </template>
 <style>
