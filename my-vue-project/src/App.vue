@@ -15,6 +15,8 @@ const addOne=()=>{
   number.value++;
 }
 
+let myCondition=true;
+
 </script>
 
 <template>
@@ -29,11 +31,22 @@ const addOne=()=>{
 
       <input type="text" v-model="myValueModel">
 
+      <h1 :class="{highlight:myCondition,red:true}">
+          Texto condicional
+      </h1>
+
 </template> 
 
 <style scoped>
 .title{
   background-color: blue;
   color: white;
+}
+.highlight{
+  background-color: black;
+  color: yellow;
+}
+.red{
+  color: red;
 }
 </style>
