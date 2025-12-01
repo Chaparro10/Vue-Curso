@@ -9,6 +9,8 @@ const myId="1";
 
 const myValue=ref("some value");
 
+const myValueModel=ref("Valor inicial");
+
 const addOne=()=>{
   number.value++;
 }
@@ -22,6 +24,10 @@ const addOne=()=>{
       <h2 @click="addOne">{{ number }}</h2>
 
       <input type="text" :value="myValue">
+
+      <h3>{{ myValueModel }}</h3>
+
+      <input type="text" v-model="myValueModel">
 
 </template> 
 
