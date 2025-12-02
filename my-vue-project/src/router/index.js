@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Movies from "../views/Movies.vue";
 import CreateMovie from "../views/CreateMovie.vue";
+import DetailMovie from "../views/DetailMovie.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: "/create",
       name: "create",
       component: CreateMovie,
+    },
+    {
+      path: "/movies/:name",
+      name: "detail",
+      component: DetailMovie,
     },
   ],
 });
