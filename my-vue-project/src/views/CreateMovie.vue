@@ -19,7 +19,7 @@ const handleSubmit = () => {
     return;
   }
   console.log("movie", movie);
-  movies.addMovie(movie);
+  movies.addMovie({...movie});
   router.push("/movies");
 };
 </script>
