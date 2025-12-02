@@ -3,6 +3,7 @@ import { computed, reactive, ref, watch, watchEffect } from "vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import { animals } from "./data/animals";
 import ChildComponent from "./components/ChildComponent.vue";
+import { RouterView } from "vue-router";
 let number = ref(0);
 
 //setInterval(()=>{number.value++},100);
@@ -173,6 +174,9 @@ const handleSubmit=()=>{
 
   </form>
 
+  <!-- Router -->
+
+  <RouterView/>
 
 </template>
 
