@@ -13,9 +13,15 @@ const props = defineProps({
         <nav>
             <ul>
 
-                <li> <a href="#">Home</a></li>
-                <li> <a href="#">Blog {{ count }}</a></li>
-                <li> <a href="#">Contact {{ props.message }}</a></li>
+                <li>
+                    <router-link class="link" to="/">Home</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/movies">Movies {{ props.count }}</router-link>
+                </li>
+                <li> 
+                    <router-link class="link" to="/create">Create Movie {{ props.message }}</router-link>
+                </li>
             </ul>
         </nav>
     </header>
