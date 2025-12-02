@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref, watch } from "vue";
+import { computed, ref, watch, watchEffect } from "vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import { animals } from "./data/animals";
 import ChildComponent from "./components/ChildComponent.vue";
@@ -54,6 +54,9 @@ watch(userName,(newValue,oldValue)=>{
  deep:true // para objetos
 })
 
+watchEffect(()=>{//Se ejecuta al iniciar
+  console.log('Username modified to:', userName.value)
+})
 
 </script>
 
@@ -131,6 +134,10 @@ watch(userName,(newValue,oldValue)=>{
       Cambiar de usuario
     </button>
  
+    <!-- WATCH EFFECT | VIGILANCIA DE CAMBIOS -->
+
+    
+     
 
 
   
